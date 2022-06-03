@@ -13,8 +13,8 @@ module "database" {
   rdb_disable_backup             = false
   rdb_instance_volume_type       = "bssd"
   rdb_instance_volume_size_in_gb = "50"
-  rdb_user_root_password         = "testjuleS3&"
-  rdb_user_scaleway_db_password  = "testjuleS3&"
+  rdb_user_root_password         = "XXXXXXXXXXXXXX"
+  rdb_user_scaleway_db_password  = "XXXXXXXXXXXXXX"
   instance_ip_addr               = module.instance.instance_ip_addr
   zone                           = var.zone
   region                         = var.region
