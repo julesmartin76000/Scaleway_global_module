@@ -1,8 +1,8 @@
 resource "scaleway_instance_ip" "public_ip" {}
 
 resource "scaleway_instance_volume" "scw-instance" {
-  size_in_gb = 30
-  type       = "l_ssd"
+  size_in_gb = var.volume_size_in_gb
+  type       = var.volume_type
 }
 
 resource "scaleway_instance_server" "scw-instance" {
@@ -17,7 +17,7 @@ resource "scaleway_instance_server" "scw-instance" {
 
   root_volume {
     # The local storage of a DEV1-L instance is 80 GB, subtract 30 GB from the additional l_ssd volume, then the root volume needs to be 50 GB.
-    size_in_gb = 50
+    size_in_gb = var.instance_size_in_gb
   }
 
   private_network {

@@ -1,7 +1,10 @@
 
 module "instance" {
-  source             = "./module/instance"
-  private_network_id = module.vpc.private_network_id
+  source              = "./module/instance"
+  instance_size_in_gb = 50
+  volume_size_in_gb   = 30
+  volume_type         = "l_ssd"
+  private_network_id  = module.vpc.private_network_id
 }
 
 module "database" {
