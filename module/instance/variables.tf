@@ -1,3 +1,11 @@
+variable "instance_type" {
+  type = string
+}
+
+variable "instance_image" {
+  type = string
+}
+
 variable "instance_size_in_gb" {
   type = number
 }

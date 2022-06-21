@@ -6,8 +6,8 @@ resource "scaleway_instance_volume" "scw-instance" {
 }
 
 resource "scaleway_instance_server" "scw-instance" {
-  type  = "DEV1-L"
-  image = "ubuntu_focal"
+  type  = var.instance_type
+  image = var.instance_image
 
   tags = ["terraform instance", "scw-instance"]
 
@@ -16,7 +16,8 @@ resource "scaleway_instance_server" "scw-instance" {
   additional_volume_ids = [scaleway_instance_volume.scw-instance.id]
 
   root_volume {
-    # The local storage of a DEV1-L instance is 80 GB, subtract 30 GB from the additional l_ssd volume, then the root volume needs to be 50 GB.
+    # The local storage of a DEV1-L instance is 80 GB, subtract 30 GB from the additional l_ssd volume,
+    # then the root volume needs to be 50 GB.
     size_in_gb = var.instance_size_in_gb
   }
 

@@ -1,23 +1,25 @@
 
 module "instance" {
   source              = "./module/instance"
-  instance_size_in_gb = 50
-  volume_size_in_gb   = 30
-  volume_type         = "l_ssd"
+  instance_size_in_gb = var.instance_size_in_gb
+  instance_type       = var.instance_type
+  instance_image      = var.instance_image
+  volume_size_in_gb   = var.volume_size_in_gb
+  volume_type         = var.volume_type
   private_network_id  = module.vpc.private_network_id
 }
 
 module "database" {
   source = "./module/database"
 
-  rdb_instance_node_type         = "db-gp-xs"
-  rdb_instance_engine            = "PostgreSQL-13"
-  rdb_is_ha_cluster              = true
-  rdb_disable_backup             = false
-  rdb_instance_volume_type       = "bssd"
-  rdb_instance_volume_size_in_gb = "50"
-  rdb_user_root_password         = "XXXXXXXXXXXXXX"
-  rdb_user_scaleway_db_password  = "XXXXXXXXXXXXXX"
+  rdb_instance_node_type         = var.rdb_instance_node_type
+  rdb_instance_engine            = var.rdb_instance_engine
+  rdb_is_ha_cluster              = var.rdb_is_ha_cluster
+  rdb_disable_backup             = var.rdb_disable_backup
+  rdb_instance_volume_type       = var.rdb_instance_volume_type
+  rdb_instance_volume_size_in_gb = var.rdb_instance_volume_size_in_gb
+  rdb_user_root_password         = var.rdb_user_root_password
+  rdb_user_scaleway_db_password  = var.rdb_user_scaleway_db_password
   instance_ip_addr               = module.instance.instance_ip_addr
   zone                           = var.zone
   region                         = var.region
@@ -27,12 +29,12 @@ module "database" {
 module "kapsule" {
   source = "./module/kapsule"
 
-  kapsule_cluster_version = "1.22"
-  kapsule_pool_size       = 2
-  kapsule_pool_min_size   = 2
-  kapsule_pool_max_size   = 4
-  kapsule_pool_node_type  = "DEV1-M"
-  cni                     = "calico"
+  kapsule_cluster_version = var.kapsule_cluster_version
+  kapsule_pool_size       = var.kapsule_pool_size
+  kapsule_pool_min_size   = var.kapsule_pool_min_size
+  kapsule_pool_max_size   = var.kapsule_pool_max_size
+  kapsule_pool_node_type  = var.kapsule_pool_node_type
+  cni                     = var.cni
   zone                    = var.zone
   region                  = var.region
   env                     = var.env
@@ -41,10 +43,10 @@ module "kapsule" {
 module "loadbalancer" {
   source = "./module/loadbalancer"
 
-  lb_size          = "LB-S"
-  inbound_port     = "80"
-  forward_port     = "80"
-  forward_protocol = "http"
+  lb_size          = var.lb_size
+  inbound_port     = var.inbound_port
+  forward_port     = var.forward_port
+  forward_protocol = var.forward_protocol
   zone             = var.zone
   region           = var.region
   env              = var.env
@@ -53,8 +55,8 @@ module "loadbalancer" {
 module "vpc" {
   source = "./module/vpc"
 
-  public_gateway_dhcp = "192.168.1.0/24"
-  public_gateway_type = "VPC-GW-S"
+  public_gateway_dhcp = var.public_gateway_dhcp
+  public_gateway_type = var.public_gateway_type
   zone                = var.zone
   region              = var.region
   env                 = var.env
