@@ -38,3 +38,4 @@ forward_protocol = "http"
 # VPC
 public_gateway_dhcp = "192.168.1.0/24"
 public_gateway_type = "VPC-GW-S"
+bastion_port        = 2222

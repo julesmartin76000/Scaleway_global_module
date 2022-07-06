@@ -115,3 +115,8 @@ variable "public_gateway_dhcp" {
 variable "public_gateway_type" {
   type = string
 }
+
+# VPC
+variable "bastion_port" {
+  type = string
+}

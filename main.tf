@@ -9,6 +9,7 @@ module "instance" {
   private_network_id  = module.vpc.private_network_id
 }
 
+/*
 module "database" {
   source = "./module/database"
 
@@ -39,6 +40,7 @@ module "kapsule" {
   region                  = var.region
   env                     = var.env
 }
+*/
 
 module "loadbalancer" {
   source = "./module/loadbalancer"
@@ -57,6 +59,7 @@ module "vpc" {
 
   public_gateway_dhcp = var.public_gateway_dhcp
   public_gateway_type = var.public_gateway_type
+  bastion_port        = var.bastion_port
   zone                = var.zone
   region              = var.region
   env                 = var.env
