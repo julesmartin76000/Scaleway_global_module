@@ -18,8 +18,8 @@ rdb_is_ha_cluster              = true
 rdb_disable_backup             = false
 rdb_instance_volume_type       = "bssd"
 rdb_instance_volume_size_in_gb = "50"
-rdb_user_root_password         = "test&Jules32"
-rdb_user_scaleway_db_password  = "test&Jules32"
+rdb_user_root_password         = "tesTjules1&"
+rdb_user_scaleway_db_password  = "tesTjules1&"
 
 # Kapsule
 kapsule_cluster_version = "1.22"

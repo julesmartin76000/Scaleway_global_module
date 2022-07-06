@@ -31,11 +31,13 @@ variable "rdb_instance_volume_size_in_gb" {
 }
 
 variable "rdb_user_root_password" {
-  type = string
+  type      = string
+  sensitive = true
 }
 
 variable "rdb_user_scaleway_db_password" {
-  type = string
+  type      = string
+  sensitive = true
 }
 
 variable "rdb_instance_volume_type" {
