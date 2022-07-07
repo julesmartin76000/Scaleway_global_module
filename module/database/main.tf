@@ -6,7 +6,7 @@ resource "scaleway_rdb_instance" "scaleway-rdb" {
   is_ha_cluster     = var.rdb_is_ha_cluster
   disable_backup    = var.rdb_disable_backup
   volume_size_in_gb = var.rdb_instance_volume_size_in_gb
-  user_name         = "root"
+  user_name         = var.user_name
   password          = var.rdb_user_root_password
 }
 

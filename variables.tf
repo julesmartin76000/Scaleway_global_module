@@ -32,6 +32,10 @@ variable "volume_type" {
   type = string
 }
 
+variable "tags" {
+  type = list(any)
+}
+
 # Database
 variable "rdb_is_ha_cluster" {
   type = bool
@@ -46,6 +50,10 @@ variable "rdb_instance_node_type" {
 }
 
 variable "rdb_instance_engine" {
+  type = string
+}
+
+variable "user_name" {
   type = string
 }
 

@@ -21,3 +21,7 @@ variable "volume_type" {
 variable "private_network_id" {
   type = string
 }
+
+variable "tags" {
+  type = list(any)
+}

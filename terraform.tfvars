@@ -4,11 +4,12 @@ region                         = "fr-par"
 env                            = "dev"
 
 # Instance
-instance_size_in_gb = 50
-instance_type       = "DEV1-L"
-instance_image      = "ubuntu_focal"
-volume_size_in_gb   = 30
-volume_type         = "l_ssd"
+instance_size_in_gb            = 50
+instance_type                  = "DEV1-L"
+instance_image                 = "ubuntu_focal"
+volume_size_in_gb              = 30
+volume_type                    = "l_ssd"
+tags                           = ["terraform instance", "scw-instance"]
 
 
 # Database
@@ -18,6 +19,7 @@ rdb_is_ha_cluster              = true
 rdb_disable_backup             = false
 rdb_instance_volume_type       = "bssd"
 rdb_instance_volume_size_in_gb = "50"
+user_name                      = "root"
 rdb_user_root_password         = "tesTjules1&"
 rdb_user_scaleway_db_password  = "tesTjules1&"
 

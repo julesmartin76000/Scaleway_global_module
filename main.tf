@@ -6,10 +6,10 @@ module "instance" {
   instance_image      = var.instance_image
   volume_size_in_gb   = var.volume_size_in_gb
   volume_type         = var.volume_type
+  tags                = var.tags
   private_network_id  = module.vpc.private_network_id
 }
 
-/*
 module "database" {
   source = "./module/database"
 
@@ -22,11 +22,13 @@ module "database" {
   rdb_user_root_password         = var.rdb_user_root_password
   rdb_user_scaleway_db_password  = var.rdb_user_scaleway_db_password
   instance_ip_addr               = module.instance.instance_ip_addr
+  user_name                      = var.user_name
   zone                           = var.zone
   region                         = var.region
   env                            = var.env
 }
 
+/*
 module "kapsule" {
   source = "./module/kapsule"
 
@@ -40,7 +42,6 @@ module "kapsule" {
   region                  = var.region
   env                     = var.env
 }
-*/
 
 module "loadbalancer" {
   source = "./module/loadbalancer"
@@ -54,6 +55,7 @@ module "loadbalancer" {
   env              = var.env
 }
 
+*/
 module "vpc" {
   source = "./module/vpc"
 

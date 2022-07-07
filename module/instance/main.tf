@@ -9,9 +9,9 @@ resource "scaleway_instance_server" "scw-instance" {
   type  = var.instance_type
   image = var.instance_image
 
-  tags = ["terraform instance", "scw-instance"]
-
+  tags  = var.tags
   ip_id = scaleway_instance_ip.public_ip.id
+
 
   additional_volume_ids = [scaleway_instance_volume.scw-instance.id]
 

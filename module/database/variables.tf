@@ -26,6 +26,11 @@ variable "rdb_instance_engine" {
   type = string
 }
 
+variable "user_name" {
+  type      = string
+  sensitive = true
+}
+
 variable "rdb_instance_volume_size_in_gb" {
   type = string
 }
