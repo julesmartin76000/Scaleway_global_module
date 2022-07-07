@@ -8,6 +8,11 @@ resource "scaleway_rdb_instance" "scaleway-rdb" {
   volume_size_in_gb = var.rdb_instance_volume_size_in_gb
   user_name         = var.user_name
   password          = var.rdb_user_root_password
+  private_network {
+    ip_net = "192.168.1.254/24" #pool high
+    pn_id  = var.private_network_id
+  }
+
 }
 
 resource "scaleway_rdb_database" "scaleway-rdb" {

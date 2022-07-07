@@ -26,6 +26,10 @@ variable "rdb_instance_engine" {
   type = string
 }
 
+variable "private_network_id" {
+  type = string
+}
+
 variable "user_name" {
   type      = string
   sensitive = true

@@ -22,6 +22,7 @@ module "database" {
   rdb_user_root_password         = var.rdb_user_root_password
   rdb_user_scaleway_db_password  = var.rdb_user_scaleway_db_password
   instance_ip_addr               = module.instance.instance_ip_addr
+  private_network_id             = module.vpc.private_network_id
   user_name                      = var.user_name
   zone                           = var.zone
   region                         = var.region
