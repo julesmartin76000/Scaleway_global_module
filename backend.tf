@@ -9,17 +9,3 @@ terraform {
     skip_region_validation      = true
   }
 }
-
-
-/*
-
-For the credentials part:
-
-==> Create a ~/.aws/credentials:
-
-[default]
-aws_access_key_id=<SCW_ACCESS_KEY>
-aws_secret_access_key=<SCW_SECRET_KEY>
-region=fr-par
-
-*/

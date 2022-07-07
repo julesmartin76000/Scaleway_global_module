@@ -22,6 +22,17 @@ terraform plan
 terraform apply
 ```
 
+### Reminder
+
+Don't forget, you will neeed aws credentials for the accessing your S3 bucket (do not worry, the bucket is at Scaleway ;) ).
+==> Create a ``~/.aws/credentials``:
+```
+[default]
+aws_access_key_id=<SCW_ACCESS_KEY>
+aws_secret_access_key=<SCW_SECRET_KEY>
+region=fr-par
+```
+
 
 ## Resources
 
