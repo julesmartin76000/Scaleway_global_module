@@ -5,6 +5,10 @@ The purpose of this guide is to help users deploy their infrastructure in a safe
 With this module you will be able to deploy an instance inside a private network, a load balancer, a database, a kapsule cluster, and vpc products: public gateway (DHCP/NAT/SSH Bastion) + private network.
 
 
+## Architecture Schema
+
+![Alt text](Terraform_Module_Scaleway_Schema.png?raw=true "Title")
+
 ## Pre-requisites
 
 Before starting on the project, you need to have an [account](https://www.scaleway.com/en/docs/console/my-account/how-to/create-an-account/), your [credentials](https://www.scaleway.com/en/docs/console/my-account/concepts/#api-key) all set up, and [install Terraform ](https://learn.hashicorp.com/tutorials/terraform/install-cli) on the server you are using, or locally, using  the last version of the Scaleway Terraform [provider](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs).
