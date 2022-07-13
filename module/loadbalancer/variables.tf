@@ -25,3 +25,7 @@ variable "forward_port" {
 variable "forward_protocol" {
   type = string
 }
+
+variable "private_network_id" {
+  type = string
+}

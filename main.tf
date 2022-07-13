@@ -29,7 +29,6 @@ module "database" {
   env                            = var.env
 }
 
-/*
 module "kapsule" {
   source = "./module/kapsule"
 
@@ -47,16 +46,16 @@ module "kapsule" {
 module "loadbalancer" {
   source = "./module/loadbalancer"
 
-  lb_size          = var.lb_size
-  inbound_port     = var.inbound_port
-  forward_port     = var.forward_port
-  forward_protocol = var.forward_protocol
-  zone             = var.zone
-  region           = var.region
-  env              = var.env
+  lb_size            = var.lb_size
+  inbound_port       = var.inbound_port
+  forward_port       = var.forward_port
+  forward_protocol   = var.forward_protocol
+  private_network_id = module.vpc.private_network_id
+  zone               = var.zone
+  region             = var.region
+  env                = var.env
 }
 
-*/
 module "vpc" {
   source = "./module/vpc"
 

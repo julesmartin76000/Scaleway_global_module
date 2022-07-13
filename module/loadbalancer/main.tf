@@ -4,6 +4,12 @@ resource "scaleway_lb_ip" "scaleway_lb" {
 resource "scaleway_lb" "scaleway_lb" {
   ip_id = scaleway_lb_ip.scaleway_lb.id
   type  = var.lb_size
+  private_network {
+    private_network_id = var.private_network_id
+    dhcp_config        = true
+  }
+
+  #depends_on = [scaleway_vpc_public_gateway.main]
 }
 
 #frontend

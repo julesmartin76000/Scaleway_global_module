@@ -5,7 +5,7 @@ env                            = "dev"
 
 # Instance
 instance_size_in_gb            = 50
-instance_type                  = "DEV1-L"
+instance_type                  = "GP1-S"
 instance_image                 = "ubuntu_focal"
 volume_size_in_gb              = 30
 volume_type                    = "l_ssd"
@@ -20,15 +20,15 @@ rdb_disable_backup             = false
 rdb_instance_volume_type       = "bssd"
 rdb_instance_volume_size_in_gb = "50"
 user_name                      = "root"
-rdb_user_root_password         = "tesTjules1&"
-rdb_user_scaleway_db_password  = "tesTjules1&"
+rdb_user_root_password         = "XXXXXXXX"
+rdb_user_scaleway_db_password  = "XXXXXXXX"
 
 # Kapsule
 kapsule_cluster_version = "1.22"
 kapsule_pool_size       = 2
 kapsule_pool_min_size   = 2
 kapsule_pool_max_size   = 4
-kapsule_pool_node_type  = "DEV1-M"
+kapsule_pool_node_type  = "GP1-S"
 cni                     = "calico"
 
 # LoadBalancer
