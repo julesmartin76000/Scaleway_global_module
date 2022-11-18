@@ -1,6 +1,7 @@
 
 module "instance" {
-  source              = "./module/instance"
+  source = "./module/instance"
+
   instance_size_in_gb = var.instance_size_in_gb
   instance_type       = var.instance_type
   instance_image      = var.instance_image
@@ -10,6 +11,7 @@ module "instance" {
   private_network_id  = module.vpc.private_network_id
 }
 
+/*
 module "database" {
   source = "./module/database"
 
@@ -55,6 +57,7 @@ module "loadbalancer" {
   region             = var.region
   env                = var.env
 }
+*/
 
 module "vpc" {
   source = "./module/vpc"
@@ -65,5 +68,14 @@ module "vpc" {
   zone                = var.zone
   region              = var.region
   env                 = var.env
+
+}
+
+module "iam" {
+  source = "./module/iam"
+
+  # zone   = var.zone
+  # region = var.region
+  # env    = var.env
 
 }

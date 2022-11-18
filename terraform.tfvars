@@ -23,6 +23,7 @@ user_name                      = "root"
 rdb_user_root_password         = "XXXXXXXX"
 rdb_user_scaleway_db_password  = "XXXXXXXX"
 
+
 # Kapsule
 kapsule_cluster_version = "1.22"
 kapsule_pool_size       = 2
@@ -31,13 +32,18 @@ kapsule_pool_max_size   = 4
 kapsule_pool_node_type  = "GP1-S"
 cni                     = "calico"
 
+
 # LoadBalancer
 lb_size          = "LB-S"
 inbound_port     = "80"
 forward_port     = "80"
 forward_protocol = "http"
 
+
 # VPC
 public_gateway_dhcp = "192.168.1.0/24"
 public_gateway_type = "VPC-GW-S"
 bastion_port        = 2222
+
+
+# IAM
